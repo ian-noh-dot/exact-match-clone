@@ -58,6 +58,7 @@ export function ProductListing({
 }) {
   const [active, setActive] = useState(0);
   const tab = tabs[active];
+  if (!tab) return null;
 
   return (
     <div className="min-h-screen bg-background">

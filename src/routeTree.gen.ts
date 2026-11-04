@@ -10,33 +10,238 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AktualnosciRouteImport } from './routes/aktualnosci'
+import { Route as KontoZSamsungRouteImport } from './routes/konto-z-samsung'
+import { Route as OtworzKontoRouteImport } from './routes/otworz-konto'
+import { Route as PomocIKontaktRouteImport } from './routes/pomoc-i-kontakt'
+import { Route as PromocjeRouteImport } from './routes/promocje'
+import { Route as ZalogujRouteImport } from './routes/zaloguj'
+import { Route as KlientIndywidualnyBankowoscElektronicznaRouteImport } from './routes/klient-indywidualny.bankowosc-elektroniczna'
+import { Route as KlientIndywidualnyKartyPlatnosciRouteImport } from './routes/klient-indywidualny.karty-platnosci'
+import { Route as KlientIndywidualnyKontaRouteImport } from './routes/klient-indywidualny.konta'
+import { Route as KlientIndywidualnyKredytyPozyczkiRouteImport } from './routes/klient-indywidualny.kredyty-pozyczki'
+import { Route as KlientIndywidualnyOszczedzanieInwestycjeRouteImport } from './routes/klient-indywidualny.oszczedzanie-inwestycje'
+import { Route as KlientIndywidualnyKartyPlatnosciAllegroklikRouteImport } from './routes/klient-indywidualny.karty-platnosci.allegroklik'
+import { Route as KlientIndywidualnyKartyPlatnosciKartaKredytowaMastercardPlatinumRouteImport } from './routes/klient-indywidualny.karty-platnosci.karta-kredytowa-mastercard-platinum'
+import { Route as KlientIndywidualnyKontaKontoZaZeroRouteImport } from './routes/klient-indywidualny.konta.konto-za-zero'
+import { Route as KlientIndywidualnyOszczedzanieInwestycjeObligacjeSkarboweRouteImport } from './routes/klient-indywidualny.oszczedzanie-inwestycje.obligacje-skarbowe'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AktualnosciRoute = AktualnosciRouteImport.update({
+  id: '/aktualnosci',
+  path: '/aktualnosci',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KontoZSamsungRoute = KontoZSamsungRouteImport.update({
+  id: '/konto-z-samsung',
+  path: '/konto-z-samsung',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OtworzKontoRoute = OtworzKontoRouteImport.update({
+  id: '/otworz-konto',
+  path: '/otworz-konto',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PomocIKontaktRoute = PomocIKontaktRouteImport.update({
+  id: '/pomoc-i-kontakt',
+  path: '/pomoc-i-kontakt',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PromocjeRoute = PromocjeRouteImport.update({
+  id: '/promocje',
+  path: '/promocje',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ZalogujRoute = ZalogujRouteImport.update({
+  id: '/zaloguj',
+  path: '/zaloguj',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KlientIndywidualnyBankowoscElektronicznaRoute =
+  KlientIndywidualnyBankowoscElektronicznaRouteImport.update({
+    id: '/klient-indywidualny/bankowosc-elektroniczna',
+    path: '/klient-indywidualny/bankowosc-elektroniczna',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const KlientIndywidualnyKartyPlatnosciRoute =
+  KlientIndywidualnyKartyPlatnosciRouteImport.update({
+    id: '/klient-indywidualny/karty-platnosci',
+    path: '/klient-indywidualny/karty-platnosci',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const KlientIndywidualnyKontaRoute = KlientIndywidualnyKontaRouteImport.update({
+  id: '/klient-indywidualny/konta',
+  path: '/klient-indywidualny/konta',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KlientIndywidualnyKredytyPozyczkiRoute =
+  KlientIndywidualnyKredytyPozyczkiRouteImport.update({
+    id: '/klient-indywidualny/kredyty-pozyczki',
+    path: '/klient-indywidualny/kredyty-pozyczki',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const KlientIndywidualnyOszczedzanieInwestycjeRoute =
+  KlientIndywidualnyOszczedzanieInwestycjeRouteImport.update({
+    id: '/klient-indywidualny/oszczedzanie-inwestycje',
+    path: '/klient-indywidualny/oszczedzanie-inwestycje',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const KlientIndywidualnyKartyPlatnosciAllegroklikRoute =
+  KlientIndywidualnyKartyPlatnosciAllegroklikRouteImport.update({
+    id: '/allegroklik',
+    path: '/allegroklik',
+    getParentRoute: () => KlientIndywidualnyKartyPlatnosciRoute,
+  } as any)
+const KlientIndywidualnyKartyPlatnosciKartaKredytowaMastercardPlatinumRoute =
+  KlientIndywidualnyKartyPlatnosciKartaKredytowaMastercardPlatinumRouteImport.update(
+    {
+      id: '/karta-kredytowa-mastercard-platinum',
+      path: '/karta-kredytowa-mastercard-platinum',
+      getParentRoute: () => KlientIndywidualnyKartyPlatnosciRoute,
+    } as any,
+  )
+const KlientIndywidualnyKontaKontoZaZeroRoute =
+  KlientIndywidualnyKontaKontoZaZeroRouteImport.update({
+    id: '/konto-za-zero',
+    path: '/konto-za-zero',
+    getParentRoute: () => KlientIndywidualnyKontaRoute,
+  } as any)
+const KlientIndywidualnyOszczedzanieInwestycjeObligacjeSkarboweRoute =
+  KlientIndywidualnyOszczedzanieInwestycjeObligacjeSkarboweRouteImport.update({
+    id: '/obligacje-skarbowe',
+    path: '/obligacje-skarbowe',
+    getParentRoute: () => KlientIndywidualnyOszczedzanieInwestycjeRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/aktualnosci': typeof AktualnosciRoute
+  '/konto-z-samsung': typeof KontoZSamsungRoute
+  '/otworz-konto': typeof OtworzKontoRoute
+  '/pomoc-i-kontakt': typeof PomocIKontaktRoute
+  '/promocje': typeof PromocjeRoute
+  '/zaloguj': typeof ZalogujRoute
+  '/klient-indywidualny/bankowosc-elektroniczna': typeof KlientIndywidualnyBankowoscElektronicznaRoute
+  '/klient-indywidualny/karty-platnosci': typeof KlientIndywidualnyKartyPlatnosciRouteWithChildren
+  '/klient-indywidualny/konta': typeof KlientIndywidualnyKontaRouteWithChildren
+  '/klient-indywidualny/kredyty-pozyczki': typeof KlientIndywidualnyKredytyPozyczkiRoute
+  '/klient-indywidualny/oszczedzanie-inwestycje': typeof KlientIndywidualnyOszczedzanieInwestycjeRouteWithChildren
+  '/klient-indywidualny/karty-platnosci/allegroklik': typeof KlientIndywidualnyKartyPlatnosciAllegroklikRoute
+  '/klient-indywidualny/karty-platnosci/karta-kredytowa-mastercard-platinum': typeof KlientIndywidualnyKartyPlatnosciKartaKredytowaMastercardPlatinumRoute
+  '/klient-indywidualny/konta/konto-za-zero': typeof KlientIndywidualnyKontaKontoZaZeroRoute
+  '/klient-indywidualny/oszczedzanie-inwestycje/obligacje-skarbowe': typeof KlientIndywidualnyOszczedzanieInwestycjeObligacjeSkarboweRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/aktualnosci': typeof AktualnosciRoute
+  '/konto-z-samsung': typeof KontoZSamsungRoute
+  '/otworz-konto': typeof OtworzKontoRoute
+  '/pomoc-i-kontakt': typeof PomocIKontaktRoute
+  '/promocje': typeof PromocjeRoute
+  '/zaloguj': typeof ZalogujRoute
+  '/klient-indywidualny/bankowosc-elektroniczna': typeof KlientIndywidualnyBankowoscElektronicznaRoute
+  '/klient-indywidualny/karty-platnosci': typeof KlientIndywidualnyKartyPlatnosciRouteWithChildren
+  '/klient-indywidualny/konta': typeof KlientIndywidualnyKontaRouteWithChildren
+  '/klient-indywidualny/kredyty-pozyczki': typeof KlientIndywidualnyKredytyPozyczkiRoute
+  '/klient-indywidualny/oszczedzanie-inwestycje': typeof KlientIndywidualnyOszczedzanieInwestycjeRouteWithChildren
+  '/klient-indywidualny/karty-platnosci/allegroklik': typeof KlientIndywidualnyKartyPlatnosciAllegroklikRoute
+  '/klient-indywidualny/karty-platnosci/karta-kredytowa-mastercard-platinum': typeof KlientIndywidualnyKartyPlatnosciKartaKredytowaMastercardPlatinumRoute
+  '/klient-indywidualny/konta/konto-za-zero': typeof KlientIndywidualnyKontaKontoZaZeroRoute
+  '/klient-indywidualny/oszczedzanie-inwestycje/obligacje-skarbowe': typeof KlientIndywidualnyOszczedzanieInwestycjeObligacjeSkarboweRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/aktualnosci': typeof AktualnosciRoute
+  '/konto-z-samsung': typeof KontoZSamsungRoute
+  '/otworz-konto': typeof OtworzKontoRoute
+  '/pomoc-i-kontakt': typeof PomocIKontaktRoute
+  '/promocje': typeof PromocjeRoute
+  '/zaloguj': typeof ZalogujRoute
+  '/klient-indywidualny/bankowosc-elektroniczna': typeof KlientIndywidualnyBankowoscElektronicznaRoute
+  '/klient-indywidualny/karty-platnosci': typeof KlientIndywidualnyKartyPlatnosciRouteWithChildren
+  '/klient-indywidualny/konta': typeof KlientIndywidualnyKontaRouteWithChildren
+  '/klient-indywidualny/kredyty-pozyczki': typeof KlientIndywidualnyKredytyPozyczkiRoute
+  '/klient-indywidualny/oszczedzanie-inwestycje': typeof KlientIndywidualnyOszczedzanieInwestycjeRouteWithChildren
+  '/klient-indywidualny/karty-platnosci/allegroklik': typeof KlientIndywidualnyKartyPlatnosciAllegroklikRoute
+  '/klient-indywidualny/karty-platnosci/karta-kredytowa-mastercard-platinum': typeof KlientIndywidualnyKartyPlatnosciKartaKredytowaMastercardPlatinumRoute
+  '/klient-indywidualny/konta/konto-za-zero': typeof KlientIndywidualnyKontaKontoZaZeroRoute
+  '/klient-indywidualny/oszczedzanie-inwestycje/obligacje-skarbowe': typeof KlientIndywidualnyOszczedzanieInwestycjeObligacjeSkarboweRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/aktualnosci'
+    | '/konto-z-samsung'
+    | '/otworz-konto'
+    | '/pomoc-i-kontakt'
+    | '/promocje'
+    | '/zaloguj'
+    | '/klient-indywidualny/bankowosc-elektroniczna'
+    | '/klient-indywidualny/karty-platnosci'
+    | '/klient-indywidualny/konta'
+    | '/klient-indywidualny/kredyty-pozyczki'
+    | '/klient-indywidualny/oszczedzanie-inwestycje'
+    | '/klient-indywidualny/karty-platnosci/allegroklik'
+    | '/klient-indywidualny/karty-platnosci/karta-kredytowa-mastercard-platinum'
+    | '/klient-indywidualny/konta/konto-za-zero'
+    | '/klient-indywidualny/oszczedzanie-inwestycje/obligacje-skarbowe'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/aktualnosci'
+    | '/konto-z-samsung'
+    | '/otworz-konto'
+    | '/pomoc-i-kontakt'
+    | '/promocje'
+    | '/zaloguj'
+    | '/klient-indywidualny/bankowosc-elektroniczna'
+    | '/klient-indywidualny/karty-platnosci'
+    | '/klient-indywidualny/konta'
+    | '/klient-indywidualny/kredyty-pozyczki'
+    | '/klient-indywidualny/oszczedzanie-inwestycje'
+    | '/klient-indywidualny/karty-platnosci/allegroklik'
+    | '/klient-indywidualny/karty-platnosci/karta-kredytowa-mastercard-platinum'
+    | '/klient-indywidualny/konta/konto-za-zero'
+    | '/klient-indywidualny/oszczedzanie-inwestycje/obligacje-skarbowe'
+  id:
+    | '__root__'
+    | '/'
+    | '/aktualnosci'
+    | '/konto-z-samsung'
+    | '/otworz-konto'
+    | '/pomoc-i-kontakt'
+    | '/promocje'
+    | '/zaloguj'
+    | '/klient-indywidualny/bankowosc-elektroniczna'
+    | '/klient-indywidualny/karty-platnosci'
+    | '/klient-indywidualny/konta'
+    | '/klient-indywidualny/kredyty-pozyczki'
+    | '/klient-indywidualny/oszczedzanie-inwestycje'
+    | '/klient-indywidualny/karty-platnosci/allegroklik'
+    | '/klient-indywidualny/karty-platnosci/karta-kredytowa-mastercard-platinum'
+    | '/klient-indywidualny/konta/konto-za-zero'
+    | '/klient-indywidualny/oszczedzanie-inwestycje/obligacje-skarbowe'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AktualnosciRoute: typeof AktualnosciRoute
+  KontoZSamsungRoute: typeof KontoZSamsungRoute
+  OtworzKontoRoute: typeof OtworzKontoRoute
+  PomocIKontaktRoute: typeof PomocIKontaktRoute
+  PromocjeRoute: typeof PromocjeRoute
+  ZalogujRoute: typeof ZalogujRoute
+  KlientIndywidualnyBankowoscElektronicznaRoute: typeof KlientIndywidualnyBankowoscElektronicznaRoute
+  KlientIndywidualnyKartyPlatnosciRoute: typeof KlientIndywidualnyKartyPlatnosciRouteWithChildren
+  KlientIndywidualnyKontaRoute: typeof KlientIndywidualnyKontaRouteWithChildren
+  KlientIndywidualnyKredytyPozyczkiRoute: typeof KlientIndywidualnyKredytyPozyczkiRoute
+  KlientIndywidualnyOszczedzanieInwestycjeRoute: typeof KlientIndywidualnyOszczedzanieInwestycjeRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +253,179 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/aktualnosci': {
+      id: '/aktualnosci'
+      path: '/aktualnosci'
+      fullPath: '/aktualnosci'
+      preLoaderRoute: typeof AktualnosciRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/konto-z-samsung': {
+      id: '/konto-z-samsung'
+      path: '/konto-z-samsung'
+      fullPath: '/konto-z-samsung'
+      preLoaderRoute: typeof KontoZSamsungRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/otworz-konto': {
+      id: '/otworz-konto'
+      path: '/otworz-konto'
+      fullPath: '/otworz-konto'
+      preLoaderRoute: typeof OtworzKontoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pomoc-i-kontakt': {
+      id: '/pomoc-i-kontakt'
+      path: '/pomoc-i-kontakt'
+      fullPath: '/pomoc-i-kontakt'
+      preLoaderRoute: typeof PomocIKontaktRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/promocje': {
+      id: '/promocje'
+      path: '/promocje'
+      fullPath: '/promocje'
+      preLoaderRoute: typeof PromocjeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/zaloguj': {
+      id: '/zaloguj'
+      path: '/zaloguj'
+      fullPath: '/zaloguj'
+      preLoaderRoute: typeof ZalogujRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/klient-indywidualny/bankowosc-elektroniczna': {
+      id: '/klient-indywidualny/bankowosc-elektroniczna'
+      path: '/klient-indywidualny/bankowosc-elektroniczna'
+      fullPath: '/klient-indywidualny/bankowosc-elektroniczna'
+      preLoaderRoute: typeof KlientIndywidualnyBankowoscElektronicznaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/klient-indywidualny/karty-platnosci': {
+      id: '/klient-indywidualny/karty-platnosci'
+      path: '/klient-indywidualny/karty-platnosci'
+      fullPath: '/klient-indywidualny/karty-platnosci'
+      preLoaderRoute: typeof KlientIndywidualnyKartyPlatnosciRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/klient-indywidualny/konta': {
+      id: '/klient-indywidualny/konta'
+      path: '/klient-indywidualny/konta'
+      fullPath: '/klient-indywidualny/konta'
+      preLoaderRoute: typeof KlientIndywidualnyKontaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/klient-indywidualny/kredyty-pozyczki': {
+      id: '/klient-indywidualny/kredyty-pozyczki'
+      path: '/klient-indywidualny/kredyty-pozyczki'
+      fullPath: '/klient-indywidualny/kredyty-pozyczki'
+      preLoaderRoute: typeof KlientIndywidualnyKredytyPozyczkiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/klient-indywidualny/oszczedzanie-inwestycje': {
+      id: '/klient-indywidualny/oszczedzanie-inwestycje'
+      path: '/klient-indywidualny/oszczedzanie-inwestycje'
+      fullPath: '/klient-indywidualny/oszczedzanie-inwestycje'
+      preLoaderRoute: typeof KlientIndywidualnyOszczedzanieInwestycjeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/klient-indywidualny/karty-platnosci/allegroklik': {
+      id: '/klient-indywidualny/karty-platnosci/allegroklik'
+      path: '/allegroklik'
+      fullPath: '/klient-indywidualny/karty-platnosci/allegroklik'
+      preLoaderRoute: typeof KlientIndywidualnyKartyPlatnosciAllegroklikRouteImport
+      parentRoute: typeof KlientIndywidualnyKartyPlatnosciRoute
+    }
+    '/klient-indywidualny/karty-platnosci/karta-kredytowa-mastercard-platinum': {
+      id: '/klient-indywidualny/karty-platnosci/karta-kredytowa-mastercard-platinum'
+      path: '/karta-kredytowa-mastercard-platinum'
+      fullPath: '/klient-indywidualny/karty-platnosci/karta-kredytowa-mastercard-platinum'
+      preLoaderRoute: typeof KlientIndywidualnyKartyPlatnosciKartaKredytowaMastercardPlatinumRouteImport
+      parentRoute: typeof KlientIndywidualnyKartyPlatnosciRoute
+    }
+    '/klient-indywidualny/konta/konto-za-zero': {
+      id: '/klient-indywidualny/konta/konto-za-zero'
+      path: '/konto-za-zero'
+      fullPath: '/klient-indywidualny/konta/konto-za-zero'
+      preLoaderRoute: typeof KlientIndywidualnyKontaKontoZaZeroRouteImport
+      parentRoute: typeof KlientIndywidualnyKontaRoute
+    }
+    '/klient-indywidualny/oszczedzanie-inwestycje/obligacje-skarbowe': {
+      id: '/klient-indywidualny/oszczedzanie-inwestycje/obligacje-skarbowe'
+      path: '/obligacje-skarbowe'
+      fullPath: '/klient-indywidualny/oszczedzanie-inwestycje/obligacje-skarbowe'
+      preLoaderRoute: typeof KlientIndywidualnyOszczedzanieInwestycjeObligacjeSkarboweRouteImport
+      parentRoute: typeof KlientIndywidualnyOszczedzanieInwestycjeRoute
+    }
   }
 }
 
+interface KlientIndywidualnyKartyPlatnosciRouteChildren {
+  KlientIndywidualnyKartyPlatnosciAllegroklikRoute: typeof KlientIndywidualnyKartyPlatnosciAllegroklikRoute
+  KlientIndywidualnyKartyPlatnosciKartaKredytowaMastercardPlatinumRoute: typeof KlientIndywidualnyKartyPlatnosciKartaKredytowaMastercardPlatinumRoute
+}
+
+const KlientIndywidualnyKartyPlatnosciRouteChildren: KlientIndywidualnyKartyPlatnosciRouteChildren =
+  {
+    KlientIndywidualnyKartyPlatnosciAllegroklikRoute:
+      KlientIndywidualnyKartyPlatnosciAllegroklikRoute,
+    KlientIndywidualnyKartyPlatnosciKartaKredytowaMastercardPlatinumRoute:
+      KlientIndywidualnyKartyPlatnosciKartaKredytowaMastercardPlatinumRoute,
+  }
+
+const KlientIndywidualnyKartyPlatnosciRouteWithChildren =
+  KlientIndywidualnyKartyPlatnosciRoute._addFileChildren(
+    KlientIndywidualnyKartyPlatnosciRouteChildren,
+  )
+
+interface KlientIndywidualnyKontaRouteChildren {
+  KlientIndywidualnyKontaKontoZaZeroRoute: typeof KlientIndywidualnyKontaKontoZaZeroRoute
+}
+
+const KlientIndywidualnyKontaRouteChildren: KlientIndywidualnyKontaRouteChildren =
+  {
+    KlientIndywidualnyKontaKontoZaZeroRoute:
+      KlientIndywidualnyKontaKontoZaZeroRoute,
+  }
+
+const KlientIndywidualnyKontaRouteWithChildren =
+  KlientIndywidualnyKontaRoute._addFileChildren(
+    KlientIndywidualnyKontaRouteChildren,
+  )
+
+interface KlientIndywidualnyOszczedzanieInwestycjeRouteChildren {
+  KlientIndywidualnyOszczedzanieInwestycjeObligacjeSkarboweRoute: typeof KlientIndywidualnyOszczedzanieInwestycjeObligacjeSkarboweRoute
+}
+
+const KlientIndywidualnyOszczedzanieInwestycjeRouteChildren: KlientIndywidualnyOszczedzanieInwestycjeRouteChildren =
+  {
+    KlientIndywidualnyOszczedzanieInwestycjeObligacjeSkarboweRoute:
+      KlientIndywidualnyOszczedzanieInwestycjeObligacjeSkarboweRoute,
+  }
+
+const KlientIndywidualnyOszczedzanieInwestycjeRouteWithChildren =
+  KlientIndywidualnyOszczedzanieInwestycjeRoute._addFileChildren(
+    KlientIndywidualnyOszczedzanieInwestycjeRouteChildren,
+  )
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AktualnosciRoute: AktualnosciRoute,
+  KontoZSamsungRoute: KontoZSamsungRoute,
+  OtworzKontoRoute: OtworzKontoRoute,
+  PomocIKontaktRoute: PomocIKontaktRoute,
+  PromocjeRoute: PromocjeRoute,
+  ZalogujRoute: ZalogujRoute,
+  KlientIndywidualnyBankowoscElektronicznaRoute:
+    KlientIndywidualnyBankowoscElektronicznaRoute,
+  KlientIndywidualnyKartyPlatnosciRoute:
+    KlientIndywidualnyKartyPlatnosciRouteWithChildren,
+  KlientIndywidualnyKontaRoute: KlientIndywidualnyKontaRouteWithChildren,
+  KlientIndywidualnyKredytyPozyczkiRoute:
+    KlientIndywidualnyKredytyPozyczkiRoute,
+  KlientIndywidualnyOszczedzanieInwestycjeRoute:
+    KlientIndywidualnyOszczedzanieInwestycjeRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
