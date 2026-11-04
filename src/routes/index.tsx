@@ -1,15 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-import { SiteHeader } from "@/components/pko/site-header";
-import { Hero } from "@/components/pko/hero";
-import { PromoIntro } from "@/components/pko/promo-intro";
-import { Benefits } from "@/components/pko/benefits";
-import { Promotions } from "@/components/pko/promotions";
-import { PromoTabs } from "@/components/pko/promo-tabs";
+import { HeroCarousel } from "@/components/pko/hero-carousel";
 import { NeedsCarousel } from "@/components/pko/needs-carousel";
-import { Steps } from "@/components/pko/steps";
-import { DocumentsAndLegal } from "@/components/pko/documents-legal";
-import { SiteFooter } from "@/components/pko/site-footer";
+import { LoanCalculator } from "@/components/pko/loan-calculator";
+import { AppPromo } from "@/components/pko/app-promo";
+import { NewsTeaser } from "@/components/pko/aktualnosci";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -36,18 +31,13 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <div className="min-h-screen bg-background">
-      <SiteHeader />
       <main>
-        <Hero />
-        <PromoIntro />
-        <Benefits />
-        <Promotions />
-        <PromoTabs />
+        <HeroCarousel />
         <NeedsCarousel />
-        <Steps />
-        <DocumentsAndLegal />
+        <LoanCalculator />
+        <AppPromo />
+        <NewsTeaser />
       </main>
-      <SiteFooter />
     </div>
   );
 }

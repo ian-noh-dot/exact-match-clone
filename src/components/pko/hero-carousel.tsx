@@ -45,6 +45,7 @@ export function HeroCarousel() {
   const [index, setIndex] = useState(0);
   const slide = slides[index];
   const move = (d: number) => setIndex((i) => (i + d + slides.length) % slides.length);
+  if (!slide) return null;
 
   return (
     <section className="hero-gradient">
