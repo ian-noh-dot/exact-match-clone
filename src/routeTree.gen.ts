@@ -16,14 +16,27 @@ import { Route as OtworzKontoRouteImport } from './routes/otworz-konto'
 import { Route as PomocIKontaktRouteImport } from './routes/pomoc-i-kontakt'
 import { Route as PromocjeRouteImport } from './routes/promocje'
 import { Route as ZalogujRouteImport } from './routes/zaloguj'
+import { Route as AktualnosciIndexRouteImport } from './routes/aktualnosci.index'
+import { Route as AktualnosciSlugRouteImport } from './routes/aktualnosci.$slug'
 import { Route as KlientIndywidualnyBankowoscElektronicznaRouteImport } from './routes/klient-indywidualny.bankowosc-elektroniczna'
 import { Route as KlientIndywidualnyKartyPlatnosciRouteImport } from './routes/klient-indywidualny.karty-platnosci'
 import { Route as KlientIndywidualnyKontaRouteImport } from './routes/klient-indywidualny.konta'
 import { Route as KlientIndywidualnyKredytyPozyczkiRouteImport } from './routes/klient-indywidualny.kredyty-pozyczki'
+import { Route as KlientIndywidualnyOfertaRouteImport } from './routes/klient-indywidualny.oferta'
 import { Route as KlientIndywidualnyOszczedzanieInwestycjeRouteImport } from './routes/klient-indywidualny.oszczedzanie-inwestycje'
+import { Route as KlientIndywidualnyBankowoscElektronicznaIndexRouteImport } from './routes/klient-indywidualny.bankowosc-elektroniczna.index'
+import { Route as KlientIndywidualnyBankowoscElektronicznaDyspozycjeRouteImport } from './routes/klient-indywidualny.bankowosc-elektroniczna.dyspozycje'
+import { Route as KlientIndywidualnyBankowoscElektronicznaWyprobujRouteImport } from './routes/klient-indywidualny.bankowosc-elektroniczna.wyprobuj'
+import { Route as KlientIndywidualnyKartyPlatnosciIndexRouteImport } from './routes/klient-indywidualny.karty-platnosci.index'
 import { Route as KlientIndywidualnyKartyPlatnosciAllegroklikRouteImport } from './routes/klient-indywidualny.karty-platnosci.allegroklik'
 import { Route as KlientIndywidualnyKartyPlatnosciKartaKredytowaMastercardPlatinumRouteImport } from './routes/klient-indywidualny.karty-platnosci.karta-kredytowa-mastercard-platinum'
+import { Route as KlientIndywidualnyKontaIndexRouteImport } from './routes/klient-indywidualny.konta.index'
+import { Route as KlientIndywidualnyKontaKontoOszczednoscioweRouteImport } from './routes/klient-indywidualny.konta.konto-oszczednosciowe'
 import { Route as KlientIndywidualnyKontaKontoZaZeroRouteImport } from './routes/klient-indywidualny.konta.konto-za-zero'
+import { Route as KlientIndywidualnyKredytyPozyczkiIndexRouteImport } from './routes/klient-indywidualny.kredyty-pozyczki.index'
+import { Route as KlientIndywidualnyKredytyPozyczkiPozyczkaGotowkowaRouteImport } from './routes/klient-indywidualny.kredyty-pozyczki.pozyczka-gotowkowa'
+import { Route as KlientIndywidualnyKredytyPozyczkiPozyczkaKonsolidacyjnaRouteImport } from './routes/klient-indywidualny.kredyty-pozyczki.pozyczka-konsolidacyjna'
+import { Route as KlientIndywidualnyOszczedzanieInwestycjeIndexRouteImport } from './routes/klient-indywidualny.oszczedzanie-inwestycje.index'
 import { Route as KlientIndywidualnyOszczedzanieInwestycjeObligacjeSkarboweRouteImport } from './routes/klient-indywidualny.oszczedzanie-inwestycje.obligacje-skarbowe'
 
 const IndexRoute = IndexRouteImport.update({
@@ -61,6 +74,16 @@ const ZalogujRoute = ZalogujRouteImport.update({
   path: '/zaloguj',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AktualnosciIndexRoute = AktualnosciIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => AktualnosciRoute,
+} as any)
+const AktualnosciSlugRoute = AktualnosciSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => AktualnosciRoute,
+} as any)
 const KlientIndywidualnyBankowoscElektronicznaRoute =
   KlientIndywidualnyBankowoscElektronicznaRouteImport.update({
     id: '/klient-indywidualny/bankowosc-elektroniczna',
@@ -84,11 +107,41 @@ const KlientIndywidualnyKredytyPozyczkiRoute =
     path: '/klient-indywidualny/kredyty-pozyczki',
     getParentRoute: () => rootRouteImport,
   } as any)
+const KlientIndywidualnyOfertaRoute =
+  KlientIndywidualnyOfertaRouteImport.update({
+    id: '/klient-indywidualny/oferta',
+    path: '/klient-indywidualny/oferta',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const KlientIndywidualnyOszczedzanieInwestycjeRoute =
   KlientIndywidualnyOszczedzanieInwestycjeRouteImport.update({
     id: '/klient-indywidualny/oszczedzanie-inwestycje',
     path: '/klient-indywidualny/oszczedzanie-inwestycje',
     getParentRoute: () => rootRouteImport,
+  } as any)
+const KlientIndywidualnyBankowoscElektronicznaIndexRoute =
+  KlientIndywidualnyBankowoscElektronicznaIndexRouteImport.update({
+    id: '/',
+    path: '/',
+    getParentRoute: () => KlientIndywidualnyBankowoscElektronicznaRoute,
+  } as any)
+const KlientIndywidualnyBankowoscElektronicznaDyspozycjeRoute =
+  KlientIndywidualnyBankowoscElektronicznaDyspozycjeRouteImport.update({
+    id: '/dyspozycje',
+    path: '/dyspozycje',
+    getParentRoute: () => KlientIndywidualnyBankowoscElektronicznaRoute,
+  } as any)
+const KlientIndywidualnyBankowoscElektronicznaWyprobujRoute =
+  KlientIndywidualnyBankowoscElektronicznaWyprobujRouteImport.update({
+    id: '/wyprobuj',
+    path: '/wyprobuj',
+    getParentRoute: () => KlientIndywidualnyBankowoscElektronicznaRoute,
+  } as any)
+const KlientIndywidualnyKartyPlatnosciIndexRoute =
+  KlientIndywidualnyKartyPlatnosciIndexRouteImport.update({
+    id: '/',
+    path: '/',
+    getParentRoute: () => KlientIndywidualnyKartyPlatnosciRoute,
   } as any)
 const KlientIndywidualnyKartyPlatnosciAllegroklikRoute =
   KlientIndywidualnyKartyPlatnosciAllegroklikRouteImport.update({
@@ -104,11 +157,47 @@ const KlientIndywidualnyKartyPlatnosciKartaKredytowaMastercardPlatinumRoute =
       getParentRoute: () => KlientIndywidualnyKartyPlatnosciRoute,
     } as any,
   )
+const KlientIndywidualnyKontaIndexRoute =
+  KlientIndywidualnyKontaIndexRouteImport.update({
+    id: '/',
+    path: '/',
+    getParentRoute: () => KlientIndywidualnyKontaRoute,
+  } as any)
+const KlientIndywidualnyKontaKontoOszczednoscioweRoute =
+  KlientIndywidualnyKontaKontoOszczednoscioweRouteImport.update({
+    id: '/konto-oszczednosciowe',
+    path: '/konto-oszczednosciowe',
+    getParentRoute: () => KlientIndywidualnyKontaRoute,
+  } as any)
 const KlientIndywidualnyKontaKontoZaZeroRoute =
   KlientIndywidualnyKontaKontoZaZeroRouteImport.update({
     id: '/konto-za-zero',
     path: '/konto-za-zero',
     getParentRoute: () => KlientIndywidualnyKontaRoute,
+  } as any)
+const KlientIndywidualnyKredytyPozyczkiIndexRoute =
+  KlientIndywidualnyKredytyPozyczkiIndexRouteImport.update({
+    id: '/',
+    path: '/',
+    getParentRoute: () => KlientIndywidualnyKredytyPozyczkiRoute,
+  } as any)
+const KlientIndywidualnyKredytyPozyczkiPozyczkaGotowkowaRoute =
+  KlientIndywidualnyKredytyPozyczkiPozyczkaGotowkowaRouteImport.update({
+    id: '/pozyczka-gotowkowa',
+    path: '/pozyczka-gotowkowa',
+    getParentRoute: () => KlientIndywidualnyKredytyPozyczkiRoute,
+  } as any)
+const KlientIndywidualnyKredytyPozyczkiPozyczkaKonsolidacyjnaRoute =
+  KlientIndywidualnyKredytyPozyczkiPozyczkaKonsolidacyjnaRouteImport.update({
+    id: '/pozyczka-konsolidacyjna',
+    path: '/pozyczka-konsolidacyjna',
+    getParentRoute: () => KlientIndywidualnyKredytyPozyczkiRoute,
+  } as any)
+const KlientIndywidualnyOszczedzanieInwestycjeIndexRoute =
+  KlientIndywidualnyOszczedzanieInwestycjeIndexRouteImport.update({
+    id: '/',
+    path: '/',
+    getParentRoute: () => KlientIndywidualnyOszczedzanieInwestycjeRoute,
   } as any)
 const KlientIndywidualnyOszczedzanieInwestycjeObligacjeSkarboweRoute =
   KlientIndywidualnyOszczedzanieInwestycjeObligacjeSkarboweRouteImport.update({
@@ -119,58 +208,91 @@ const KlientIndywidualnyOszczedzanieInwestycjeObligacjeSkarboweRoute =
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/aktualnosci': typeof AktualnosciRoute
+  '/aktualnosci': typeof AktualnosciRouteWithChildren
   '/konto-z-samsung': typeof KontoZSamsungRoute
   '/otworz-konto': typeof OtworzKontoRoute
   '/pomoc-i-kontakt': typeof PomocIKontaktRoute
   '/promocje': typeof PromocjeRoute
   '/zaloguj': typeof ZalogujRoute
-  '/klient-indywidualny/bankowosc-elektroniczna': typeof KlientIndywidualnyBankowoscElektronicznaRoute
+  '/aktualnosci/$slug': typeof AktualnosciSlugRoute
+  '/klient-indywidualny/bankowosc-elektroniczna': typeof KlientIndywidualnyBankowoscElektronicznaRouteWithChildren
   '/klient-indywidualny/karty-platnosci': typeof KlientIndywidualnyKartyPlatnosciRouteWithChildren
   '/klient-indywidualny/konta': typeof KlientIndywidualnyKontaRouteWithChildren
-  '/klient-indywidualny/kredyty-pozyczki': typeof KlientIndywidualnyKredytyPozyczkiRoute
+  '/klient-indywidualny/kredyty-pozyczki': typeof KlientIndywidualnyKredytyPozyczkiRouteWithChildren
+  '/klient-indywidualny/oferta': typeof KlientIndywidualnyOfertaRoute
   '/klient-indywidualny/oszczedzanie-inwestycje': typeof KlientIndywidualnyOszczedzanieInwestycjeRouteWithChildren
+  '/aktualnosci/': typeof AktualnosciIndexRoute
+  '/klient-indywidualny/bankowosc-elektroniczna/dyspozycje': typeof KlientIndywidualnyBankowoscElektronicznaDyspozycjeRoute
+  '/klient-indywidualny/bankowosc-elektroniczna/wyprobuj': typeof KlientIndywidualnyBankowoscElektronicznaWyprobujRoute
   '/klient-indywidualny/karty-platnosci/allegroklik': typeof KlientIndywidualnyKartyPlatnosciAllegroklikRoute
   '/klient-indywidualny/karty-platnosci/karta-kredytowa-mastercard-platinum': typeof KlientIndywidualnyKartyPlatnosciKartaKredytowaMastercardPlatinumRoute
+  '/klient-indywidualny/konta/konto-oszczednosciowe': typeof KlientIndywidualnyKontaKontoOszczednoscioweRoute
   '/klient-indywidualny/konta/konto-za-zero': typeof KlientIndywidualnyKontaKontoZaZeroRoute
+  '/klient-indywidualny/kredyty-pozyczki/pozyczka-gotowkowa': typeof KlientIndywidualnyKredytyPozyczkiPozyczkaGotowkowaRoute
+  '/klient-indywidualny/kredyty-pozyczki/pozyczka-konsolidacyjna': typeof KlientIndywidualnyKredytyPozyczkiPozyczkaKonsolidacyjnaRoute
   '/klient-indywidualny/oszczedzanie-inwestycje/obligacje-skarbowe': typeof KlientIndywidualnyOszczedzanieInwestycjeObligacjeSkarboweRoute
+  '/klient-indywidualny/bankowosc-elektroniczna/': typeof KlientIndywidualnyBankowoscElektronicznaIndexRoute
+  '/klient-indywidualny/karty-platnosci/': typeof KlientIndywidualnyKartyPlatnosciIndexRoute
+  '/klient-indywidualny/konta/': typeof KlientIndywidualnyKontaIndexRoute
+  '/klient-indywidualny/kredyty-pozyczki/': typeof KlientIndywidualnyKredytyPozyczkiIndexRoute
+  '/klient-indywidualny/oszczedzanie-inwestycje/': typeof KlientIndywidualnyOszczedzanieInwestycjeIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/aktualnosci': typeof AktualnosciRoute
   '/konto-z-samsung': typeof KontoZSamsungRoute
   '/otworz-konto': typeof OtworzKontoRoute
   '/pomoc-i-kontakt': typeof PomocIKontaktRoute
   '/promocje': typeof PromocjeRoute
   '/zaloguj': typeof ZalogujRoute
-  '/klient-indywidualny/bankowosc-elektroniczna': typeof KlientIndywidualnyBankowoscElektronicznaRoute
-  '/klient-indywidualny/karty-platnosci': typeof KlientIndywidualnyKartyPlatnosciRouteWithChildren
-  '/klient-indywidualny/konta': typeof KlientIndywidualnyKontaRouteWithChildren
-  '/klient-indywidualny/kredyty-pozyczki': typeof KlientIndywidualnyKredytyPozyczkiRoute
-  '/klient-indywidualny/oszczedzanie-inwestycje': typeof KlientIndywidualnyOszczedzanieInwestycjeRouteWithChildren
+  '/aktualnosci/$slug': typeof AktualnosciSlugRoute
+  '/klient-indywidualny/oferta': typeof KlientIndywidualnyOfertaRoute
+  '/aktualnosci': typeof AktualnosciIndexRoute
+  '/klient-indywidualny/bankowosc-elektroniczna/dyspozycje': typeof KlientIndywidualnyBankowoscElektronicznaDyspozycjeRoute
+  '/klient-indywidualny/bankowosc-elektroniczna/wyprobuj': typeof KlientIndywidualnyBankowoscElektronicznaWyprobujRoute
   '/klient-indywidualny/karty-platnosci/allegroklik': typeof KlientIndywidualnyKartyPlatnosciAllegroklikRoute
   '/klient-indywidualny/karty-platnosci/karta-kredytowa-mastercard-platinum': typeof KlientIndywidualnyKartyPlatnosciKartaKredytowaMastercardPlatinumRoute
+  '/klient-indywidualny/konta/konto-oszczednosciowe': typeof KlientIndywidualnyKontaKontoOszczednoscioweRoute
   '/klient-indywidualny/konta/konto-za-zero': typeof KlientIndywidualnyKontaKontoZaZeroRoute
+  '/klient-indywidualny/kredyty-pozyczki/pozyczka-gotowkowa': typeof KlientIndywidualnyKredytyPozyczkiPozyczkaGotowkowaRoute
+  '/klient-indywidualny/kredyty-pozyczki/pozyczka-konsolidacyjna': typeof KlientIndywidualnyKredytyPozyczkiPozyczkaKonsolidacyjnaRoute
   '/klient-indywidualny/oszczedzanie-inwestycje/obligacje-skarbowe': typeof KlientIndywidualnyOszczedzanieInwestycjeObligacjeSkarboweRoute
+  '/klient-indywidualny/bankowosc-elektroniczna': typeof KlientIndywidualnyBankowoscElektronicznaIndexRoute
+  '/klient-indywidualny/karty-platnosci': typeof KlientIndywidualnyKartyPlatnosciIndexRoute
+  '/klient-indywidualny/konta': typeof KlientIndywidualnyKontaIndexRoute
+  '/klient-indywidualny/kredyty-pozyczki': typeof KlientIndywidualnyKredytyPozyczkiIndexRoute
+  '/klient-indywidualny/oszczedzanie-inwestycje': typeof KlientIndywidualnyOszczedzanieInwestycjeIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/aktualnosci': typeof AktualnosciRoute
+  '/aktualnosci': typeof AktualnosciRouteWithChildren
   '/konto-z-samsung': typeof KontoZSamsungRoute
   '/otworz-konto': typeof OtworzKontoRoute
   '/pomoc-i-kontakt': typeof PomocIKontaktRoute
   '/promocje': typeof PromocjeRoute
   '/zaloguj': typeof ZalogujRoute
-  '/klient-indywidualny/bankowosc-elektroniczna': typeof KlientIndywidualnyBankowoscElektronicznaRoute
+  '/aktualnosci/$slug': typeof AktualnosciSlugRoute
+  '/klient-indywidualny/bankowosc-elektroniczna': typeof KlientIndywidualnyBankowoscElektronicznaRouteWithChildren
   '/klient-indywidualny/karty-platnosci': typeof KlientIndywidualnyKartyPlatnosciRouteWithChildren
   '/klient-indywidualny/konta': typeof KlientIndywidualnyKontaRouteWithChildren
-  '/klient-indywidualny/kredyty-pozyczki': typeof KlientIndywidualnyKredytyPozyczkiRoute
+  '/klient-indywidualny/kredyty-pozyczki': typeof KlientIndywidualnyKredytyPozyczkiRouteWithChildren
+  '/klient-indywidualny/oferta': typeof KlientIndywidualnyOfertaRoute
   '/klient-indywidualny/oszczedzanie-inwestycje': typeof KlientIndywidualnyOszczedzanieInwestycjeRouteWithChildren
+  '/aktualnosci/': typeof AktualnosciIndexRoute
+  '/klient-indywidualny/bankowosc-elektroniczna/dyspozycje': typeof KlientIndywidualnyBankowoscElektronicznaDyspozycjeRoute
+  '/klient-indywidualny/bankowosc-elektroniczna/wyprobuj': typeof KlientIndywidualnyBankowoscElektronicznaWyprobujRoute
   '/klient-indywidualny/karty-platnosci/allegroklik': typeof KlientIndywidualnyKartyPlatnosciAllegroklikRoute
   '/klient-indywidualny/karty-platnosci/karta-kredytowa-mastercard-platinum': typeof KlientIndywidualnyKartyPlatnosciKartaKredytowaMastercardPlatinumRoute
+  '/klient-indywidualny/konta/konto-oszczednosciowe': typeof KlientIndywidualnyKontaKontoOszczednoscioweRoute
   '/klient-indywidualny/konta/konto-za-zero': typeof KlientIndywidualnyKontaKontoZaZeroRoute
+  '/klient-indywidualny/kredyty-pozyczki/pozyczka-gotowkowa': typeof KlientIndywidualnyKredytyPozyczkiPozyczkaGotowkowaRoute
+  '/klient-indywidualny/kredyty-pozyczki/pozyczka-konsolidacyjna': typeof KlientIndywidualnyKredytyPozyczkiPozyczkaKonsolidacyjnaRoute
   '/klient-indywidualny/oszczedzanie-inwestycje/obligacje-skarbowe': typeof KlientIndywidualnyOszczedzanieInwestycjeObligacjeSkarboweRoute
+  '/klient-indywidualny/bankowosc-elektroniczna/': typeof KlientIndywidualnyBankowoscElektronicznaIndexRoute
+  '/klient-indywidualny/karty-platnosci/': typeof KlientIndywidualnyKartyPlatnosciIndexRoute
+  '/klient-indywidualny/konta/': typeof KlientIndywidualnyKontaIndexRoute
+  '/klient-indywidualny/kredyty-pozyczki/': typeof KlientIndywidualnyKredytyPozyczkiIndexRoute
+  '/klient-indywidualny/oszczedzanie-inwestycje/': typeof KlientIndywidualnyOszczedzanieInwestycjeIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -182,33 +304,53 @@ export interface FileRouteTypes {
     | '/pomoc-i-kontakt'
     | '/promocje'
     | '/zaloguj'
+    | '/aktualnosci/$slug'
     | '/klient-indywidualny/bankowosc-elektroniczna'
     | '/klient-indywidualny/karty-platnosci'
     | '/klient-indywidualny/konta'
     | '/klient-indywidualny/kredyty-pozyczki'
+    | '/klient-indywidualny/oferta'
     | '/klient-indywidualny/oszczedzanie-inwestycje'
+    | '/aktualnosci/'
+    | '/klient-indywidualny/bankowosc-elektroniczna/dyspozycje'
+    | '/klient-indywidualny/bankowosc-elektroniczna/wyprobuj'
     | '/klient-indywidualny/karty-platnosci/allegroklik'
     | '/klient-indywidualny/karty-platnosci/karta-kredytowa-mastercard-platinum'
+    | '/klient-indywidualny/konta/konto-oszczednosciowe'
     | '/klient-indywidualny/konta/konto-za-zero'
+    | '/klient-indywidualny/kredyty-pozyczki/pozyczka-gotowkowa'
+    | '/klient-indywidualny/kredyty-pozyczki/pozyczka-konsolidacyjna'
     | '/klient-indywidualny/oszczedzanie-inwestycje/obligacje-skarbowe'
+    | '/klient-indywidualny/bankowosc-elektroniczna/'
+    | '/klient-indywidualny/karty-platnosci/'
+    | '/klient-indywidualny/konta/'
+    | '/klient-indywidualny/kredyty-pozyczki/'
+    | '/klient-indywidualny/oszczedzanie-inwestycje/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
-    | '/aktualnosci'
     | '/konto-z-samsung'
     | '/otworz-konto'
     | '/pomoc-i-kontakt'
     | '/promocje'
     | '/zaloguj'
+    | '/aktualnosci/$slug'
+    | '/klient-indywidualny/oferta'
+    | '/aktualnosci'
+    | '/klient-indywidualny/bankowosc-elektroniczna/dyspozycje'
+    | '/klient-indywidualny/bankowosc-elektroniczna/wyprobuj'
+    | '/klient-indywidualny/karty-platnosci/allegroklik'
+    | '/klient-indywidualny/karty-platnosci/karta-kredytowa-mastercard-platinum'
+    | '/klient-indywidualny/konta/konto-oszczednosciowe'
+    | '/klient-indywidualny/konta/konto-za-zero'
+    | '/klient-indywidualny/kredyty-pozyczki/pozyczka-gotowkowa'
+    | '/klient-indywidualny/kredyty-pozyczki/pozyczka-konsolidacyjna'
+    | '/klient-indywidualny/oszczedzanie-inwestycje/obligacje-skarbowe'
     | '/klient-indywidualny/bankowosc-elektroniczna'
     | '/klient-indywidualny/karty-platnosci'
     | '/klient-indywidualny/konta'
     | '/klient-indywidualny/kredyty-pozyczki'
     | '/klient-indywidualny/oszczedzanie-inwestycje'
-    | '/klient-indywidualny/karty-platnosci/allegroklik'
-    | '/klient-indywidualny/karty-platnosci/karta-kredytowa-mastercard-platinum'
-    | '/klient-indywidualny/konta/konto-za-zero'
-    | '/klient-indywidualny/oszczedzanie-inwestycje/obligacje-skarbowe'
   id:
     | '__root__'
     | '/'
@@ -218,29 +360,43 @@ export interface FileRouteTypes {
     | '/pomoc-i-kontakt'
     | '/promocje'
     | '/zaloguj'
+    | '/aktualnosci/$slug'
     | '/klient-indywidualny/bankowosc-elektroniczna'
     | '/klient-indywidualny/karty-platnosci'
     | '/klient-indywidualny/konta'
     | '/klient-indywidualny/kredyty-pozyczki'
+    | '/klient-indywidualny/oferta'
     | '/klient-indywidualny/oszczedzanie-inwestycje'
+    | '/aktualnosci/'
+    | '/klient-indywidualny/bankowosc-elektroniczna/dyspozycje'
+    | '/klient-indywidualny/bankowosc-elektroniczna/wyprobuj'
     | '/klient-indywidualny/karty-platnosci/allegroklik'
     | '/klient-indywidualny/karty-platnosci/karta-kredytowa-mastercard-platinum'
+    | '/klient-indywidualny/konta/konto-oszczednosciowe'
     | '/klient-indywidualny/konta/konto-za-zero'
+    | '/klient-indywidualny/kredyty-pozyczki/pozyczka-gotowkowa'
+    | '/klient-indywidualny/kredyty-pozyczki/pozyczka-konsolidacyjna'
     | '/klient-indywidualny/oszczedzanie-inwestycje/obligacje-skarbowe'
+    | '/klient-indywidualny/bankowosc-elektroniczna/'
+    | '/klient-indywidualny/karty-platnosci/'
+    | '/klient-indywidualny/konta/'
+    | '/klient-indywidualny/kredyty-pozyczki/'
+    | '/klient-indywidualny/oszczedzanie-inwestycje/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  AktualnosciRoute: typeof AktualnosciRoute
+  AktualnosciRoute: typeof AktualnosciRouteWithChildren
   KontoZSamsungRoute: typeof KontoZSamsungRoute
   OtworzKontoRoute: typeof OtworzKontoRoute
   PomocIKontaktRoute: typeof PomocIKontaktRoute
   PromocjeRoute: typeof PromocjeRoute
   ZalogujRoute: typeof ZalogujRoute
-  KlientIndywidualnyBankowoscElektronicznaRoute: typeof KlientIndywidualnyBankowoscElektronicznaRoute
+  KlientIndywidualnyBankowoscElektronicznaRoute: typeof KlientIndywidualnyBankowoscElektronicznaRouteWithChildren
   KlientIndywidualnyKartyPlatnosciRoute: typeof KlientIndywidualnyKartyPlatnosciRouteWithChildren
   KlientIndywidualnyKontaRoute: typeof KlientIndywidualnyKontaRouteWithChildren
-  KlientIndywidualnyKredytyPozyczkiRoute: typeof KlientIndywidualnyKredytyPozyczkiRoute
+  KlientIndywidualnyKredytyPozyczkiRoute: typeof KlientIndywidualnyKredytyPozyczkiRouteWithChildren
+  KlientIndywidualnyOfertaRoute: typeof KlientIndywidualnyOfertaRoute
   KlientIndywidualnyOszczedzanieInwestycjeRoute: typeof KlientIndywidualnyOszczedzanieInwestycjeRouteWithChildren
 }
 
@@ -295,6 +451,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ZalogujRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/aktualnosci/': {
+      id: '/aktualnosci/'
+      path: '/'
+      fullPath: '/aktualnosci/'
+      preLoaderRoute: typeof AktualnosciIndexRouteImport
+      parentRoute: typeof AktualnosciRoute
+    }
+    '/aktualnosci/$slug': {
+      id: '/aktualnosci/$slug'
+      path: '/$slug'
+      fullPath: '/aktualnosci/$slug'
+      preLoaderRoute: typeof AktualnosciSlugRouteImport
+      parentRoute: typeof AktualnosciRoute
+    }
     '/klient-indywidualny/bankowosc-elektroniczna': {
       id: '/klient-indywidualny/bankowosc-elektroniczna'
       path: '/klient-indywidualny/bankowosc-elektroniczna'
@@ -323,12 +493,47 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof KlientIndywidualnyKredytyPozyczkiRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/klient-indywidualny/oferta': {
+      id: '/klient-indywidualny/oferta'
+      path: '/klient-indywidualny/oferta'
+      fullPath: '/klient-indywidualny/oferta'
+      preLoaderRoute: typeof KlientIndywidualnyOfertaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/klient-indywidualny/oszczedzanie-inwestycje': {
       id: '/klient-indywidualny/oszczedzanie-inwestycje'
       path: '/klient-indywidualny/oszczedzanie-inwestycje'
       fullPath: '/klient-indywidualny/oszczedzanie-inwestycje'
       preLoaderRoute: typeof KlientIndywidualnyOszczedzanieInwestycjeRouteImport
       parentRoute: typeof rootRouteImport
+    }
+    '/klient-indywidualny/bankowosc-elektroniczna/': {
+      id: '/klient-indywidualny/bankowosc-elektroniczna/'
+      path: '/'
+      fullPath: '/klient-indywidualny/bankowosc-elektroniczna/'
+      preLoaderRoute: typeof KlientIndywidualnyBankowoscElektronicznaIndexRouteImport
+      parentRoute: typeof KlientIndywidualnyBankowoscElektronicznaRoute
+    }
+    '/klient-indywidualny/bankowosc-elektroniczna/dyspozycje': {
+      id: '/klient-indywidualny/bankowosc-elektroniczna/dyspozycje'
+      path: '/dyspozycje'
+      fullPath: '/klient-indywidualny/bankowosc-elektroniczna/dyspozycje'
+      preLoaderRoute: typeof KlientIndywidualnyBankowoscElektronicznaDyspozycjeRouteImport
+      parentRoute: typeof KlientIndywidualnyBankowoscElektronicznaRoute
+    }
+    '/klient-indywidualny/bankowosc-elektroniczna/wyprobuj': {
+      id: '/klient-indywidualny/bankowosc-elektroniczna/wyprobuj'
+      path: '/wyprobuj'
+      fullPath: '/klient-indywidualny/bankowosc-elektroniczna/wyprobuj'
+      preLoaderRoute: typeof KlientIndywidualnyBankowoscElektronicznaWyprobujRouteImport
+      parentRoute: typeof KlientIndywidualnyBankowoscElektronicznaRoute
+    }
+    '/klient-indywidualny/karty-platnosci/': {
+      id: '/klient-indywidualny/karty-platnosci/'
+      path: '/'
+      fullPath: '/klient-indywidualny/karty-platnosci/'
+      preLoaderRoute: typeof KlientIndywidualnyKartyPlatnosciIndexRouteImport
+      parentRoute: typeof KlientIndywidualnyKartyPlatnosciRoute
     }
     '/klient-indywidualny/karty-platnosci/allegroklik': {
       id: '/klient-indywidualny/karty-platnosci/allegroklik'
@@ -344,12 +549,54 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof KlientIndywidualnyKartyPlatnosciKartaKredytowaMastercardPlatinumRouteImport
       parentRoute: typeof KlientIndywidualnyKartyPlatnosciRoute
     }
+    '/klient-indywidualny/konta/': {
+      id: '/klient-indywidualny/konta/'
+      path: '/'
+      fullPath: '/klient-indywidualny/konta/'
+      preLoaderRoute: typeof KlientIndywidualnyKontaIndexRouteImport
+      parentRoute: typeof KlientIndywidualnyKontaRoute
+    }
+    '/klient-indywidualny/konta/konto-oszczednosciowe': {
+      id: '/klient-indywidualny/konta/konto-oszczednosciowe'
+      path: '/konto-oszczednosciowe'
+      fullPath: '/klient-indywidualny/konta/konto-oszczednosciowe'
+      preLoaderRoute: typeof KlientIndywidualnyKontaKontoOszczednoscioweRouteImport
+      parentRoute: typeof KlientIndywidualnyKontaRoute
+    }
     '/klient-indywidualny/konta/konto-za-zero': {
       id: '/klient-indywidualny/konta/konto-za-zero'
       path: '/konto-za-zero'
       fullPath: '/klient-indywidualny/konta/konto-za-zero'
       preLoaderRoute: typeof KlientIndywidualnyKontaKontoZaZeroRouteImport
       parentRoute: typeof KlientIndywidualnyKontaRoute
+    }
+    '/klient-indywidualny/kredyty-pozyczki/': {
+      id: '/klient-indywidualny/kredyty-pozyczki/'
+      path: '/'
+      fullPath: '/klient-indywidualny/kredyty-pozyczki/'
+      preLoaderRoute: typeof KlientIndywidualnyKredytyPozyczkiIndexRouteImport
+      parentRoute: typeof KlientIndywidualnyKredytyPozyczkiRoute
+    }
+    '/klient-indywidualny/kredyty-pozyczki/pozyczka-gotowkowa': {
+      id: '/klient-indywidualny/kredyty-pozyczki/pozyczka-gotowkowa'
+      path: '/pozyczka-gotowkowa'
+      fullPath: '/klient-indywidualny/kredyty-pozyczki/pozyczka-gotowkowa'
+      preLoaderRoute: typeof KlientIndywidualnyKredytyPozyczkiPozyczkaGotowkowaRouteImport
+      parentRoute: typeof KlientIndywidualnyKredytyPozyczkiRoute
+    }
+    '/klient-indywidualny/kredyty-pozyczki/pozyczka-konsolidacyjna': {
+      id: '/klient-indywidualny/kredyty-pozyczki/pozyczka-konsolidacyjna'
+      path: '/pozyczka-konsolidacyjna'
+      fullPath: '/klient-indywidualny/kredyty-pozyczki/pozyczka-konsolidacyjna'
+      preLoaderRoute: typeof KlientIndywidualnyKredytyPozyczkiPozyczkaKonsolidacyjnaRouteImport
+      parentRoute: typeof KlientIndywidualnyKredytyPozyczkiRoute
+    }
+    '/klient-indywidualny/oszczedzanie-inwestycje/': {
+      id: '/klient-indywidualny/oszczedzanie-inwestycje/'
+      path: '/'
+      fullPath: '/klient-indywidualny/oszczedzanie-inwestycje/'
+      preLoaderRoute: typeof KlientIndywidualnyOszczedzanieInwestycjeIndexRouteImport
+      parentRoute: typeof KlientIndywidualnyOszczedzanieInwestycjeRoute
     }
     '/klient-indywidualny/oszczedzanie-inwestycje/obligacje-skarbowe': {
       id: '/klient-indywidualny/oszczedzanie-inwestycje/obligacje-skarbowe'
@@ -361,9 +608,45 @@ declare module '@tanstack/react-router' {
   }
 }
 
+interface AktualnosciRouteChildren {
+  AktualnosciSlugRoute: typeof AktualnosciSlugRoute
+  AktualnosciIndexRoute: typeof AktualnosciIndexRoute
+}
+
+const AktualnosciRouteChildren: AktualnosciRouteChildren = {
+  AktualnosciSlugRoute: AktualnosciSlugRoute,
+  AktualnosciIndexRoute: AktualnosciIndexRoute,
+}
+
+const AktualnosciRouteWithChildren = AktualnosciRoute._addFileChildren(
+  AktualnosciRouteChildren,
+)
+
+interface KlientIndywidualnyBankowoscElektronicznaRouteChildren {
+  KlientIndywidualnyBankowoscElektronicznaDyspozycjeRoute: typeof KlientIndywidualnyBankowoscElektronicznaDyspozycjeRoute
+  KlientIndywidualnyBankowoscElektronicznaWyprobujRoute: typeof KlientIndywidualnyBankowoscElektronicznaWyprobujRoute
+  KlientIndywidualnyBankowoscElektronicznaIndexRoute: typeof KlientIndywidualnyBankowoscElektronicznaIndexRoute
+}
+
+const KlientIndywidualnyBankowoscElektronicznaRouteChildren: KlientIndywidualnyBankowoscElektronicznaRouteChildren =
+  {
+    KlientIndywidualnyBankowoscElektronicznaDyspozycjeRoute:
+      KlientIndywidualnyBankowoscElektronicznaDyspozycjeRoute,
+    KlientIndywidualnyBankowoscElektronicznaWyprobujRoute:
+      KlientIndywidualnyBankowoscElektronicznaWyprobujRoute,
+    KlientIndywidualnyBankowoscElektronicznaIndexRoute:
+      KlientIndywidualnyBankowoscElektronicznaIndexRoute,
+  }
+
+const KlientIndywidualnyBankowoscElektronicznaRouteWithChildren =
+  KlientIndywidualnyBankowoscElektronicznaRoute._addFileChildren(
+    KlientIndywidualnyBankowoscElektronicznaRouteChildren,
+  )
+
 interface KlientIndywidualnyKartyPlatnosciRouteChildren {
   KlientIndywidualnyKartyPlatnosciAllegroklikRoute: typeof KlientIndywidualnyKartyPlatnosciAllegroklikRoute
   KlientIndywidualnyKartyPlatnosciKartaKredytowaMastercardPlatinumRoute: typeof KlientIndywidualnyKartyPlatnosciKartaKredytowaMastercardPlatinumRoute
+  KlientIndywidualnyKartyPlatnosciIndexRoute: typeof KlientIndywidualnyKartyPlatnosciIndexRoute
 }
 
 const KlientIndywidualnyKartyPlatnosciRouteChildren: KlientIndywidualnyKartyPlatnosciRouteChildren =
@@ -372,6 +655,8 @@ const KlientIndywidualnyKartyPlatnosciRouteChildren: KlientIndywidualnyKartyPlat
       KlientIndywidualnyKartyPlatnosciAllegroklikRoute,
     KlientIndywidualnyKartyPlatnosciKartaKredytowaMastercardPlatinumRoute:
       KlientIndywidualnyKartyPlatnosciKartaKredytowaMastercardPlatinumRoute,
+    KlientIndywidualnyKartyPlatnosciIndexRoute:
+      KlientIndywidualnyKartyPlatnosciIndexRoute,
   }
 
 const KlientIndywidualnyKartyPlatnosciRouteWithChildren =
@@ -380,13 +665,18 @@ const KlientIndywidualnyKartyPlatnosciRouteWithChildren =
   )
 
 interface KlientIndywidualnyKontaRouteChildren {
+  KlientIndywidualnyKontaKontoOszczednoscioweRoute: typeof KlientIndywidualnyKontaKontoOszczednoscioweRoute
   KlientIndywidualnyKontaKontoZaZeroRoute: typeof KlientIndywidualnyKontaKontoZaZeroRoute
+  KlientIndywidualnyKontaIndexRoute: typeof KlientIndywidualnyKontaIndexRoute
 }
 
 const KlientIndywidualnyKontaRouteChildren: KlientIndywidualnyKontaRouteChildren =
   {
+    KlientIndywidualnyKontaKontoOszczednoscioweRoute:
+      KlientIndywidualnyKontaKontoOszczednoscioweRoute,
     KlientIndywidualnyKontaKontoZaZeroRoute:
       KlientIndywidualnyKontaKontoZaZeroRoute,
+    KlientIndywidualnyKontaIndexRoute: KlientIndywidualnyKontaIndexRoute,
   }
 
 const KlientIndywidualnyKontaRouteWithChildren =
@@ -394,14 +684,38 @@ const KlientIndywidualnyKontaRouteWithChildren =
     KlientIndywidualnyKontaRouteChildren,
   )
 
+interface KlientIndywidualnyKredytyPozyczkiRouteChildren {
+  KlientIndywidualnyKredytyPozyczkiPozyczkaGotowkowaRoute: typeof KlientIndywidualnyKredytyPozyczkiPozyczkaGotowkowaRoute
+  KlientIndywidualnyKredytyPozyczkiPozyczkaKonsolidacyjnaRoute: typeof KlientIndywidualnyKredytyPozyczkiPozyczkaKonsolidacyjnaRoute
+  KlientIndywidualnyKredytyPozyczkiIndexRoute: typeof KlientIndywidualnyKredytyPozyczkiIndexRoute
+}
+
+const KlientIndywidualnyKredytyPozyczkiRouteChildren: KlientIndywidualnyKredytyPozyczkiRouteChildren =
+  {
+    KlientIndywidualnyKredytyPozyczkiPozyczkaGotowkowaRoute:
+      KlientIndywidualnyKredytyPozyczkiPozyczkaGotowkowaRoute,
+    KlientIndywidualnyKredytyPozyczkiPozyczkaKonsolidacyjnaRoute:
+      KlientIndywidualnyKredytyPozyczkiPozyczkaKonsolidacyjnaRoute,
+    KlientIndywidualnyKredytyPozyczkiIndexRoute:
+      KlientIndywidualnyKredytyPozyczkiIndexRoute,
+  }
+
+const KlientIndywidualnyKredytyPozyczkiRouteWithChildren =
+  KlientIndywidualnyKredytyPozyczkiRoute._addFileChildren(
+    KlientIndywidualnyKredytyPozyczkiRouteChildren,
+  )
+
 interface KlientIndywidualnyOszczedzanieInwestycjeRouteChildren {
   KlientIndywidualnyOszczedzanieInwestycjeObligacjeSkarboweRoute: typeof KlientIndywidualnyOszczedzanieInwestycjeObligacjeSkarboweRoute
+  KlientIndywidualnyOszczedzanieInwestycjeIndexRoute: typeof KlientIndywidualnyOszczedzanieInwestycjeIndexRoute
 }
 
 const KlientIndywidualnyOszczedzanieInwestycjeRouteChildren: KlientIndywidualnyOszczedzanieInwestycjeRouteChildren =
   {
     KlientIndywidualnyOszczedzanieInwestycjeObligacjeSkarboweRoute:
       KlientIndywidualnyOszczedzanieInwestycjeObligacjeSkarboweRoute,
+    KlientIndywidualnyOszczedzanieInwestycjeIndexRoute:
+      KlientIndywidualnyOszczedzanieInwestycjeIndexRoute,
   }
 
 const KlientIndywidualnyOszczedzanieInwestycjeRouteWithChildren =
@@ -411,19 +725,20 @@ const KlientIndywidualnyOszczedzanieInwestycjeRouteWithChildren =
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  AktualnosciRoute: AktualnosciRoute,
+  AktualnosciRoute: AktualnosciRouteWithChildren,
   KontoZSamsungRoute: KontoZSamsungRoute,
   OtworzKontoRoute: OtworzKontoRoute,
   PomocIKontaktRoute: PomocIKontaktRoute,
   PromocjeRoute: PromocjeRoute,
   ZalogujRoute: ZalogujRoute,
   KlientIndywidualnyBankowoscElektronicznaRoute:
-    KlientIndywidualnyBankowoscElektronicznaRoute,
+    KlientIndywidualnyBankowoscElektronicznaRouteWithChildren,
   KlientIndywidualnyKartyPlatnosciRoute:
     KlientIndywidualnyKartyPlatnosciRouteWithChildren,
   KlientIndywidualnyKontaRoute: KlientIndywidualnyKontaRouteWithChildren,
   KlientIndywidualnyKredytyPozyczkiRoute:
-    KlientIndywidualnyKredytyPozyczkiRoute,
+    KlientIndywidualnyKredytyPozyczkiRouteWithChildren,
+  KlientIndywidualnyOfertaRoute: KlientIndywidualnyOfertaRoute,
   KlientIndywidualnyOszczedzanieInwestycjeRoute:
     KlientIndywidualnyOszczedzanieInwestycjeRouteWithChildren,
 }
